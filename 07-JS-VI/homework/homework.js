@@ -17,30 +17,56 @@ function operacionMatematica(n1, n2, cb) {
   //Tu código:
 }
 
-function sumarArray(numeros, cb) {
+function sumarArray(numeros, cb) {                                            
   // Suma todos los números enteros (int/integers) de un array ("numeros")
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
+
 }
 
-function forEach(array, cb) {
+function forEach(array, cb) { // [1,2,3]  console.log
+  //                                  ^     
   // Itera sobre la matriz "array" y pasa los valores al callback uno por uno
   // Pista: Estarás invocando a `cb` varias veces (una por cada valor en la matriz)
   //Tu código:
+
+  array.forEach( function(elemento){  // 3
+
+    cb(elemento)  // -- console.log(3)          // 1
+   //                                              2
+   //                                              3
+  })
+  //                                          function cb(elemento){  elemento + 1}
 }
 
-function map(array, cb) {
-  // Crea un nuevo array
+function map(array, cb) { // [1,2,3]   
+  // Crea un nuevo array          ^
   // Itera sobre cada valor en "array", pásalo a `cb` y luego ubicar el valor devuelto por `cb` en un nuevo array
   // El nuevo array debe tener la misma longitud que el array del argumento
   //Tu código:
+
+  let nuevoArray = array.map(function(elemento){ // 3
+//                                                [2, 3, 4]
+    return cb(elemento)
+
+  })
+
+  return nuevoArray
+
+
 }
 
-function filter(array) {
+function filter(array) {  // ['agua', 'Hola', 'Argentina']  'argentina'[0] === 'a'
+  //                                               ^
   //Filtrar todos los elementos del array que comiencen con la letra "a".
   //Devolver un nuevo array con los elementos que cumplen la condición
   //Tu código:
+
+  return array.filter(function(elemento){ //                ['agua','']
+    return elemento[0] === 'a' 
+  })
+
 }
 
 // No modificar nada debajo de esta línea
